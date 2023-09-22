@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Números</title>
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var campoA = parseFloat(document.getElementById("campoA").value);
+            var campoB = parseFloat(document.getElementById("campoB").value);
+
+            if (campoB > campoA) {
+                document.getElementById("mensagem").innerHTML = "Formulário válido: B é maior que A.";
+            } else {
+                document.getElementById("mensagem").innerHTML = "Formulário inválido: B deve ser maior que A.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Validação de Números</h1>
+    <form onsubmit="validarFormulario(event)">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required><br><br>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required><br><br>
+
+        <input type="submit" value="Submeter">
+    </form>
+
+    <p id="mensagem"></p>
+</body>
+</html>
